@@ -1,0 +1,25 @@
+Login page:
+	Login API
+        Use JWT authorization
+
+
+Home page(for all types of users):
+	API for showing product categories
+	API for listing all products
+        functionalities: search, sorting with in price ranges, category filtering
+	API for listing products with offers and discounts
+	Product detail API
+	Add to cart API
+	checkout API (no need to setup payment gateway)
+        send mail to the current users mail after checkout
+	API for showing contact information
+
+
+Admin page(for admin users):
+	Admin contact information add API
+	API for adding and editing products
+        product details, price, pictures, discount rates,  etc.
+	API for deleting products
+	
+
+Logout API
