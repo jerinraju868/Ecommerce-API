@@ -18,8 +18,6 @@ class AddContactSerializer(serializers.ModelSerializer):
             raise serializers.ValidationError('User with contact information is already exist')
         elif Contact.objects.filter(address=address).exists():
             raise serializers.ValidationError('User with this contact already exist')
-        elif Contact.objects.filter(mobile=mobile).exists():
-            raise serializers.ValidationError('User with this mobile number is  already exist')
         else:
             contact = Contact.objects.create(**validated_data)
             return contact
@@ -60,7 +58,7 @@ class AddProductSerializer(serializers.ModelSerializer):
 class EditProductSerializer(serializers.ModelSerializer):
     class Meta:
         model = Product
-        fields = ['product_name', 'description','price','stock','available', 'picture','offer']
+        fields = [ 'description','price','stock','available', 'picture','offer']
 
 # Delete Prodcut Serializer
 class DeleteSerializer(serializers.ModelSerializer):

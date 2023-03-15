@@ -1,6 +1,6 @@
 from django.urls import path
 from django.contrib import admin
-from Api_Login.views import RegisterView, LoginView,ProfileView
+from Api_Login.views import RegisterView, LoginView,ProfileView, LogoutView, LogoutAllView
 
 from Api_Admin.views import AddContactView,ListContactView
 from Api_Admin.views import AddCategoryView, AddProductView, EditProductView,DeleteProductView
@@ -49,5 +49,6 @@ urlpatterns = [
     path('token-verify/', TokenVerifyView.as_view(), name='token_verify'),
     path('token-refresh/',TokenRefreshView.as_view(), name='token-refresh'),
 
-
+    path('logout/',LogoutView.as_view()),
+    path('logout-all/',LogoutAllView.as_view()),
 ]

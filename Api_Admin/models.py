@@ -7,8 +7,11 @@ class Contact(models.Model):
     address = models.TextField()
     mobile = PhoneNumberField(blank=True)
 
+    class Meta:
+        ordering = ('id',)
+
     def __str__(self):
-        return '{}'.format(self.user)
+        return self.user
 
 
 class Category(models.Model):
