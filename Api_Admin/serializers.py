@@ -46,34 +46,21 @@ class AddCatergorySerializer(serializers.ModelSerializer):
         category = Category.objects.create(**validated_data)
         return category
 
-# List Category Serializer 
-class ListCatergorySerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Category
-        fields = ['id','category_name']
-
-
 # Add Product serializer
 class AddProductSerializer(serializers.ModelSerializer):
     class Meta:
         model = Product
-        fields = ['category','product_name','description','price','stock','available','picture','discount']
+        fields = ['category','product_name','description','price','stock','available','picture','offer']
 
     def create(self, validated_data):
         product = Product.objects.create(**validated_data)
         return product
 
-# List Product Serializer
-class ListProductSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Product
-        fields = ['id','product_name', 'description','price','stock','available', 'picture','discount']
-
 # Edit Product Serializer
 class EditProductSerializer(serializers.ModelSerializer):
     class Meta:
         model = Product
-        fields = ['product_name', 'description','price','stock','available', 'picture','discount']
+        fields = ['product_name', 'description','price','stock','available', 'picture','offer']
 
 # Delete Prodcut Serializer
 class DeleteSerializer(serializers.ModelSerializer):
