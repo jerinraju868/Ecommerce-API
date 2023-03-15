@@ -32,7 +32,7 @@ class Product(models.Model):
     stock = models.IntegerField()
     available = models.BooleanField()
     picture = models.ImageField(upload_to='product')
-    discount = models.FloatField()
+    offer = models.FloatField()
     created_at = models.DateField(auto_now_add=True)
     updated_at = models.DateField(auto_now=True)
 
@@ -42,4 +42,4 @@ class Product(models.Model):
         verbose_name_plural = 'Products'
 
     def __str__(self):
-        return '{}'.format(self.product_name)
+        return self.product_name

@@ -12,7 +12,9 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'Api_Login', 
     'Api_Admin',
+    'Api_Home',
     'phonenumber_field',
+    'django_countries',
     'rest_framework',
     'rest_framework.authtoken',
     'rest_framework_simplejwt',
@@ -111,3 +113,10 @@ SIMPLE_JWT = {
 
 # ALGORITHM = "HS256"
 # ACCESS_TOKEN_EXPIRE_MINUTES = 30
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
