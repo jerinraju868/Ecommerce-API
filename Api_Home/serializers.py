@@ -120,7 +120,7 @@ class CheckoutSerilaiser(serializers.ModelSerializer):
 class ContactInformationSerialiser(serializers.ModelSerializer):
     class Meta:
         model = Contact
-        fields = ['user','address','mobile']
+        fields = ['id','user','address','mobile']
 
     def to_representation(self, instance):
         rep = super(ContactInformationSerialiser, self).to_representation(instance)
